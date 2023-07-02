@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Common/Globals.dart';
-import '../Common/Prefs.dart';
+import '../common/globals.dart';
+import '../common/prefs.dart';
 
 class SettingScreen extends StatefulWidget {
   SettingScreen({super.key, required this.updateSettingAfter});

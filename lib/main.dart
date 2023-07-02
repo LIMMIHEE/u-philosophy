@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:u_philosophy/Common/Prefs.dart';
-import 'package:u_philosophy/Common/SQLiteHelper.dart';
-import 'package:u_philosophy/Screen/HistoryScreen.dart';
-import 'package:u_philosophy/Screen/SettingScreen.dart';
-import 'package:u_philosophy/Screen/WriteScreen.dart';
+import 'package:u_philosophy/common/prefs.dart';
+import 'package:u_philosophy/common/sqlite_helper.dart';
+import 'package:u_philosophy/screen/history_screen.dart';
+import 'package:u_philosophy/screen/setting_screen.dart';
+import 'package:u_philosophy/screen/write_screen.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
-import 'Common/Globals.dart';
+import 'common/globals.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +19,12 @@ void main() async {
     noteList.sort((b, a) => a.date.compareTo(b.date));
   });
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -43,6 +45,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
         valueListenable: themeNotifier,
         builder: (_, ThemeMode currentMode, child) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             theme:
                 ThemeData(primaryColor: Colors.white, fontFamily: 'Pretendard'),
             themeMode: currentMode,
@@ -134,7 +137,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
   }
 
   void setThemeMode() {
-    var darkmodeOn = prefs.getBool(Prefs().DARKMODE) ?? false;
-    themeNotifier.value = darkmodeOn ? ThemeMode.dark : ThemeMode.light;
+    var darkModeOn = prefs.getBool(Prefs().DARKMODE) ?? false;
+    themeNotifier.value = darkModeOn ? ThemeMode.dark : ThemeMode.light;
   }
 }

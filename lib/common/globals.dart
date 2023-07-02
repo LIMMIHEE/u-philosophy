@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:u_philosophy/Common/Prefs.dart';
-import 'package:u_philosophy/Model/Note.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:u_philosophy/common/prefs.dart';
+import 'package:u_philosophy/model/note.dart';
 
-var prefs;
+late SharedPreferences prefs;
 final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
 late List<Note> noteList;
 
-final questionList = [
+const questionList = [
   "당신에게 제일 큰 가치를 가진 것은 무엇인가요?",
   "삶의 가장 큰 원동력이 무엇인가요?",
   "무엇을 추구하며 살아가고 있나요?",

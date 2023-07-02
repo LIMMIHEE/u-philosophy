@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
-import 'package:u_philosophy/Model/Note.dart';
+import 'package:u_philosophy/model/note.dart';
 
 class SQLiteHelper {
   static Database? _database;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:u_philosophy/Model/Note.dart';
-import '../Common/Globals.dart';
+import 'package:u_philosophy/model/note.dart';
+import '../common/globals.dart';
 
 class BorderContainer extends StatelessWidget {
   final double topRight;
@@ -14,6 +14,7 @@ class BorderContainer extends StatelessWidget {
   final bool isBlackContainer;
 
   const BorderContainer({
+    super.key,
     this.topRight = 16,
     this.topLeft = 16,
     this.bottomRight = 16,

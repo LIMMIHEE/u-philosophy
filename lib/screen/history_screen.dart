@@ -3,14 +3,14 @@ import 'dart:io';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:u_philosophy/Common/Globals.dart';
-import 'package:u_philosophy/Common/SQLiteHelper.dart';
-import 'package:u_philosophy/Common/Util.dart';
-import 'package:u_philosophy/Model/Note.dart';
-import 'package:u_philosophy/Widget/CommonWidget.dart';
+import 'package:u_philosophy/common/globals.dart';
+import 'package:u_philosophy/common/sqlite_helper.dart';
+import 'package:u_philosophy/common/util.dart';
+import 'package:u_philosophy/model/note.dart';
+import 'package:u_philosophy/widget/common_widget.dart';
 
 class HistoryScreen extends StatefulWidget {
-  HistoryScreen({super.key, required this.updateNoteAfter});
+  const HistoryScreen({super.key, required this.updateNoteAfter});
 
   final Function updateNoteAfter;
 
@@ -37,6 +37,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
             DropdownButton2(
               isExpanded: true,
               value: sortName,
+              underline: Container(),
               items: sortTypeList
                   .map((item) => DropdownMenuItem<String>(
                         value: item,
@@ -84,7 +85,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     shrinkWrap: true,
                     itemCount: noteList.length,
                     itemBuilder: (BuildContext context, int index) {
-                      var note = noteList[index];
+                      Note note = noteList[index];
                       return InkWell(
                         child: HistoryListItem(
                           note: note,

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:u_philosophy/Common/Globals.dart';
-import 'package:u_philosophy/Common/Prefs.dart';
-import 'package:u_philosophy/Common/SQLiteHelper.dart';
-import 'package:u_philosophy/Common/Util.dart';
-import 'package:u_philosophy/Model/Note.dart';
-import 'package:u_philosophy/Widget/CommonWidget.dart';
+import 'package:u_philosophy/common/globals.dart';
+import 'package:u_philosophy/common/prefs.dart';
+import 'package:u_philosophy/common/sqlite_helper.dart';
+import 'package:u_philosophy/common/util.dart';
+import 'package:u_philosophy/model/note.dart';
+import 'package:u_philosophy/widget/common_widget.dart';
 
 class WriteScreen extends StatefulWidget {
-  WriteScreen(
+  const WriteScreen(
       {super.key, required this.questions, required this.insertNoteAfter});
 
   final List<String> questions;
